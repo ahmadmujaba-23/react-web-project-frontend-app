@@ -1,5 +1,6 @@
 import { Grid, TextField, Button } from '@mui/material';
 import React from 'react';
+import { toast } from 'react-toastify';
 import productService from '../../services/ProductService';
 
 const UpdateProduct = (props) => {
@@ -48,6 +49,9 @@ const UpdateProduct = (props) => {
                     })
                     .catch((err)=>{
                     console.log(err);
+                    toast.error(err.response.data, {
+                        position: toast.POSITION.TOP_LEFT
+                    })
                 })
                 }
             }

@@ -40,7 +40,7 @@ const NewProduct = (props) => {
                     })
                     .catch((err)=>{
                     console.log(err);
-                    toast.error("Login your account to add Product", {
+                    toast.error(err.response.data, {
                         position: toast.POSITION.TOP_LEFT
                     })
                 })
